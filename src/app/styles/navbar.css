@@ -1,0 +1,13 @@
+/* src/app/styles/navbar.css */
+nav {
+  background-color: #ffffff; /* f9fafc */
+}
+
+nav a {
+  color: #272727;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
