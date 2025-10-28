@@ -5,44 +5,39 @@ import { useEffect, useRef } from 'react';
 export default function Gallery() {
   const galleryRef = useRef(null);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const items = entry.target.querySelectorAll('.gallery-item');
-          items.forEach((item, index) => {
-            item.classList.add('animate-in');
-            item.style.animationDelay = `${index * 0.15}s`;
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-      rootMargin: '50px',
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const items = entry.target.querySelectorAll('.gallery-item');
+            items.forEach((item, index) => {
+              item.classList.add('animate-in');
+              item.style.animationDelay = `${index * 0.15}s`;
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '50px',
+      }
+    );
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
     }
-  );
 
-  // Ovde čuvamo trenutnu vrednost ref-a u lokalnu promenljivu
-  const currentGalleryRef = galleryRef.current;
-
-  if (currentGalleryRef) {
-    observer.observe(currentGalleryRef);
-  }
-
-  return () => {
-    if (currentGalleryRef) {
-      observer.unobserve(currentGalleryRef);
-    }
-  };
-}, []);
+    return () => {
+      if (galleryRef.current) {
+        observer.unobserve(galleryRef.current);
+      }
+    };
+  }, []);
 
   return (
-
-    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 md:pt-4 pt-1 bg-salon-white overflow-hidden" ref={galleryRef}>
-
+    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-white overflow-hidden" ref={galleryRef}>
       <div className="gallery-wrapper">
         {/* Prvi red */}
         <div className="gallery-row first-row">
@@ -175,27 +170,30 @@ useEffect(() => {
           max-width: 100%;
         }
 
-        /* Blur efekti - samo za prvi i poslednji red */
+        /* Postepeni blur efekti - samo za prvi i poslednji red */
         .first-row .gallery-item::before,
         .last-row .gallery-item::after {
           content: '';
           position: absolute;
           left: 0;
           right: 0;
-          height: 15%;
+          height: 30%; /* Povećana visina za bolji prelaz */
           pointer-events: none;
-          backdrop-filter: blur(1.8px);
-          -webkit-backdrop-filter: blur(1.8px);
+          z-index: 1; /* Osigurava da blur efekt bude iznad slike */
         }
 
         .first-row .gallery-item::before {
           top: 0;
-          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+          filter: blur(4px); /* Blaže zamagljenje */
+          -webkit-filter: blur(4px);
         }
 
         .last-row .gallery-item::after {
           bottom: 0;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+          background: linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+          filter: blur(4px); /* Blaže zamagljenje */
+          -webkit-filter: blur(4px);
         }
 
         /* Responsivnost za tablete (1280px do 481px) */
@@ -217,6 +215,12 @@ useEffect(() => {
           .gallery-item {
             flex-basis: calc(var(--item-basis) * 1.15) !important;
             max-width: 100%;
+          }
+          .first-row .gallery-item::before,
+          .last-row .gallery-item::after {
+            height: 35%;
+            filter: blur(3px); /* Blaže zamagljenje */
+            -webkit-filter: blur(3px);
           }
         }
 
@@ -242,11 +246,17 @@ useEffect(() => {
           }
           /* Specifično za srednji red */
           .middle-row .gallery-item {
-            flex-basis: calc(var(--item-basis) * 1.13) !important; /* Blago smanjenje na 1.12 umesto 1.15 */
+            flex-basis: calc(var(--item-basis) * 1.13) !important; /* Blago smanjenje */
           }
           .middle-row .gallery-item img {
-            width: calc(100% * 0.97); /* Smanjenje širine slika za oko 3% radi fino podešavanja */
-            height: auto; /* Očuvanje proporcija */
+            width: calc(100% * 0.97); /* Smanjenje širine */
+            height: auto;
+          }
+          .first-row .gallery-item::before,
+          .last-row .gallery-item::after {
+            height: 40%;
+            filter: blur(2px); /* Najblaže zamagljenje */
+            -webkit-filter: blur(2px);
           }
         }
       `}</style>
