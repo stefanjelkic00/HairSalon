@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-12 sm:py-16 px-4 sm:px-6 md:px-16 text-center bg-gradient-to-b from-[#f9fafc] to-[#F7F2FF]"
+      className="py-12 sm:py-16 px-4 sm:px-6 md:px-16 text-center bg-gradient-to-b from-gradient-bg-color-two to-gradient-bg-color-three"
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
