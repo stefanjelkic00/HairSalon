@@ -32,29 +32,6 @@ html {
   --color-salon-dark-purple: #3b2f5a; /* Dodato za hover efekte */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    /* Gradijent */
-    --color-gradient-bg-color-one: #0a0a0a;
-    --color-gradient-bg-color-two: #1a1a2e;
-    --color-gradient-bg-color-three: #2e2c3f;
-
-    /* Ostale boje */
-    --color-salon-purple: #9a8cfc;
-    --color-salon-purpledark: #1a0f3d;
-    --color-salon-light: #1a1a2e;
-    --color-salon-light-purple: #443b68;
-    --color-salon-gray: #b0b0b0;
-    --color-salon-black: #ffffff;
-    --color-salon-white: #0a0a0a;
-  }
-}
-
-
-
 body {
   background: var(--background);
   color: var(--foreground);

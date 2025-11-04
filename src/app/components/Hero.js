@@ -47,7 +47,6 @@ export default function Hero() {
     group button-bordered 
     inline-flex items-center justify-center 
     bg-[#09001e] text-white 
-    dark:bg-white dark:text-black
     px-6 sm:px-8 py-3 sm:py-4 
     rounded-full font-medium text-sm sm:text-base 
     transition-all

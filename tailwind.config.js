@@ -1,7 +1,7 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'media', // 👈 automatski koristi dark ako korisnik ima tamni režim
+  darkMode: 'false', // 👈 automatski koristi dark ako korisnik ima tamni režim
   content: [
     './src/app/**/*.{js,jsx,ts,tsx}',
     './src/app/components/**/*.{js,jsx,ts,tsx}',
