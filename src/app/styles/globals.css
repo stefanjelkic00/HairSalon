@@ -13,6 +13,12 @@ html {
   --font-great-vibes: 'Great Vibes', cursive;
 }
 
+@layer base {
+  html {
+    color-scheme: light !important;
+  }
+}
+
 @theme {
   /* Gradient Background Colors */
   --color-gradient-bg-color-one: #ffffff;
