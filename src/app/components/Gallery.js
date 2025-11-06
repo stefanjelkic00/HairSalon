@@ -5,39 +5,44 @@ import { useEffect, useRef } from 'react';
 export default function Gallery() {
   const galleryRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const items = entry.target.querySelectorAll('.gallery-item');
-            items.forEach((item, index) => {
-              item.classList.add('animate-in');
-              item.style.animationDelay = `${index * 0.15}s`;
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '50px',
-      }
-    );
-
-    if (galleryRef.current) {
-      observer.observe(galleryRef.current);
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll('.gallery-item');
+          items.forEach((item, index) => {
+            item.classList.add('animate-in');
+            item.style.animationDelay = `${index * 0.15}s`;
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: '50px',
     }
+  );
 
-    return () => {
-      if (galleryRef.current) {
-        observer.unobserve(galleryRef.current);
-      }
-    };
-  }, []);
+  // Ovde čuvamo trenutnu vrednost ref-a u lokalnu promenljivu
+  const currentGalleryRef = galleryRef.current;
+
+  if (currentGalleryRef) {
+    observer.observe(currentGalleryRef);
+  }
+
+  return () => {
+    if (currentGalleryRef) {
+      observer.unobserve(currentGalleryRef);
+    }
+  };
+}, []);
 
   return (
-    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-white overflow-hidden" ref={galleryRef}>
+
+    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 md:pt-4 pt-1 bg-[var(--color-gradient-bg-color-one)] overflow-hidden" ref={galleryRef}>
+
       <div className="gallery-wrapper">
         {/* Prvi red */}
         <div className="gallery-row first-row">

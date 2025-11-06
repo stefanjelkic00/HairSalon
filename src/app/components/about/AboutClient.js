@@ -51,7 +51,7 @@ export default function AboutClient() {
           viewport={{ once: true }}
           variants={statVariants}
         >
-          <h3 className="text-4xl sm:text-5xl text-salon-gray">1000+</h3>
+          <h3 className="text-4xl sm:text-5xl text-salon-black">1000+</h3>
           <p className="text-sm sm:text-base text-salon-black font-light">Zadovoljnih klijenata</p>
         </motion.div>
       </div>

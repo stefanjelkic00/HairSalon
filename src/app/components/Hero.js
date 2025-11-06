@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex flex-col items-center md:pt-4 justify-center bg-gradient-to-b from-white to-[#f9fafc]"
+      className="relative h-screen flex flex-col items-center md:pt-4 justify-center bg-gradient-to-b from-gradient-bg-color-one to-gradient-bg-color-two"
     >
       {/* SVG Backgrounds */}
       <div className="absolute inset-0 w-full h-full opacity-10 overflow-hidden">
@@ -33,24 +33,35 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative text-center text-salon-black z-10">
-        <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold mb-4 great-vibes gradient-title">
-          Salon Lepote Bucka
-        </h1>
-        <p className="text-base sm:text-lg md:text-2xl mb-6 drop-shadow-md">
-          Istaknite svoju lepotu uz našu profesionalnu negu. Vaša kosa zaslužuje najbolje.
-        </p>
-        <Link
-          href="#pricing"
-          className="group button-bordered inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
-        >
-          <span className="inline-flex items-center justify-center">
-            <ScissorsIcon
-              className="w-0 h-5 opacity-0 group-hover:w-5 group-hover:opacity-100 mr-2 transition-all duration-500"
-              aria-hidden="true"
-            />
-            <span>Pogledajte usluge</span>
-          </span>
-        </Link>
+<h1 className="text-6xl sm:text-7xl font-normal md:font-bold mb-4 great-vibes gradient-title">
+  Salon Lepote Bucka
+</h1>
+
+<p className="text-base sm:text-lg md:text-2xl mb-6 drop-shadow-md px-6 max-w-xl mx-auto">
+  Istaknite svoju lepotu uz našu profesionalnu negu. Vaša kosa zaslužuje najbolje.
+</p>
+
+<Link
+  href="#pricing"
+  className="
+    group button-bordered 
+    inline-flex items-center justify-center 
+    bg-[#09001e] text-white 
+    px-6 sm:px-8 py-3 sm:py-4 
+    rounded-full font-medium text-sm sm:text-base 
+    transition-all
+"
+>
+  <span className="inline-flex items-center justify-center">
+    <ScissorsIcon
+      className="w-0 h-5 opacity-0 group-hover:w-5 group-hover:opacity-100 mr-2 transition-all duration-500"
+      aria-hidden="true"
+    />
+    <span>Pogledajte usluge</span>
+  </span>
+</Link>
+
+
       </div>
 
       {/* Social Links */}

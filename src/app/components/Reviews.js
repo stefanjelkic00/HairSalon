@@ -3,7 +3,7 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-salon-light to-white"
+      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-salon-light to-gradient-bg-color-one"
     > 
       <div className="max-w-7xl mx-auto relative">
 

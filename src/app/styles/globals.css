@@ -13,7 +13,21 @@ html {
   --font-great-vibes: 'Great Vibes', cursive;
 }
 
+@layer base {
+  html {
+    color-scheme: light !important;
+  }
+}
+
 @theme {
+  /* Gradient Background Colors */
+  --color-gradient-bg-color-one: #ffffff;
+  --color-gradient-bg-color-two: #f9fafc;
+  --color-gradient-bg-color-three: #F7F2FF;
+
+  
+
+
   --color-salon-purple: #4c3f75;
   --color-salon-purpledark: #09001e;
   --color-salon-light: #f1ebfc;
@@ -22,13 +36,6 @@ html {
   --color-salon-white: #ffffff;
   --color-salon-gray: #252525;
   --color-salon-dark-purple: #3b2f5a; /* Dodato za hover efekte */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -178,4 +185,18 @@ a {
   opacity: 0;
   transition-delay: 0s;
   animation: none; /* Uklanja animaciju kada je navbar hoverovan */
+}
+
+.first-row .gallery-item::before,
+.last-row .gallery-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15%;
+  pointer-events: none;
+  backdrop-filter: blur(1.8px);
+  -webkit-backdrop-filter: blur(1.8px);
+  will-change: transform;
+  transform: translateZ(0);
 }

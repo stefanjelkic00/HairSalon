@@ -1,6 +1,7 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'false', // 👈 automatski koristi dark ako korisnik ima tamni režim
   content: [
     './src/app/**/*.{js,jsx,ts,tsx}',
     './src/app/components/**/*.{js,jsx,ts,tsx}',
@@ -13,7 +14,7 @@ module.exports = {
       colors: {
         'salon-purple': '#4c3f75',
         'salon-light': '#d7d3de',
-        'salon-black': '#000000',
+        'salon-black': '#ffffff',
         'salon-white': '#ffffff',
       },
       animation: {
