@@ -186,3 +186,17 @@ a {
   transition-delay: 0s;
   animation: none; /* Uklanja animaciju kada je navbar hoverovan */
 }
+
+.first-row .gallery-item::before,
+.last-row .gallery-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15%;
+  pointer-events: none;
+  backdrop-filter: blur(1.8px);
+  -webkit-backdrop-filter: blur(1.8px);
+  will-change: transform;
+  transform: translateZ(0);
+}
