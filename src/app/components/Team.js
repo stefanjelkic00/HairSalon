@@ -204,7 +204,7 @@ export default function Team() {
           }
         }
       `}</style>
-      <section id="team" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-[#F7F2FF] from-10% via-gray-100 via-25% via-gray-200 via-40% via-gray-100 via-55% to-white to-90% relative overflow-hidden">
+      <section id="team" className="pt-12 sm:pt-16 pb-0 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-[#F7F2FF] from-10% via-gray-100 via-25% via-gray-200 via-40% via-gray-100 via-55% to-white to-90% relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Naslov sa animacijom */}
           <h2 className={`team-title text-5xl sm:text-7xl md:text-8xl text-salon-black mb-6 sm:mb-8 great-vibes transition-all duration-1000 ease-out ${
@@ -277,8 +277,8 @@ export default function Team() {
             </div>
           </div>
           
-          {/* Divider linija */}
-          <div className="relative mt-16 sm:mt-32 mb-8 flex justify-center w-full">
+          {/* Divider linija - bez donjeg razmaka */}
+          <div className="relative mt-8 sm:mt-12 flex justify-center w-full">
             <div
               className="absolute bottom-0 w-[80%] sm:w-[80%] h-px mx-auto"
               style={{

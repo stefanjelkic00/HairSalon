@@ -122,7 +122,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* CSS za responsivnost, animaciju i blur efekte */}
+      {/* CSS za responsivnost i animaciju */}
       <style jsx>{`
         .gallery-wrapper {
           width: 100%;
@@ -170,32 +170,6 @@ export default function Gallery() {
           max-width: 100%;
         }
 
-        /* Postepeni blur efekti - samo za prvi i poslednji red */
-        .first-row .gallery-item::before,
-        .last-row .gallery-item::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          height: 30%; /* Povećana visina za bolji prelaz */
-          pointer-events: none;
-          z-index: 1; /* Osigurava da blur efekt bude iznad slike */
-        }
-
-        .first-row .gallery-item::before {
-          top: 0;
-          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
-          filter: blur(4px); /* Blaže zamagljenje */
-          -webkit-filter: blur(4px);
-        }
-
-        .last-row .gallery-item::after {
-          bottom: 0;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
-          filter: blur(4px); /* Blaže zamagljenje */
-          -webkit-filter: blur(4px);
-        }
-
         /* Responsivnost za tablete (1280px do 481px) */
         @media (max-width: 1280px) and (min-width: 481px) {
           .gallery-wrapper {
@@ -215,12 +189,6 @@ export default function Gallery() {
           .gallery-item {
             flex-basis: calc(var(--item-basis) * 1.15) !important;
             max-width: 100%;
-          }
-          .first-row .gallery-item::before,
-          .last-row .gallery-item::after {
-            height: 35%;
-            filter: blur(3px); /* Blaže zamagljenje */
-            -webkit-filter: blur(3px);
           }
         }
 
@@ -251,12 +219,6 @@ export default function Gallery() {
           .middle-row .gallery-item img {
             width: calc(100% * 0.97); /* Smanjenje širine */
             height: auto;
-          }
-          .first-row .gallery-item::before,
-          .last-row .gallery-item::after {
-            height: 40%;
-            filter: blur(2px); /* Najblaže zamagljenje */
-            -webkit-filter: blur(2px);
           }
         }
       `}</style>
