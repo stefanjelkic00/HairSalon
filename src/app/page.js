@@ -20,7 +20,7 @@ export const metadata = {
     title: 'Salon Lepote Bucka',
     description: 'Salon Lepote Bucka nudi vrhunske usluge friziranja, šišanja i ulepšavanja u Novom Sadu.',
     images: ['/logo/logo_headers.png'],
-    url: 'https://bucka.com',
+    url: 'https://bucka.rs',
     type: 'website',
   },
 };
