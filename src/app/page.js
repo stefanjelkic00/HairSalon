@@ -16,6 +16,7 @@ export const metadata = {
   title: 'Salon Lepote Bucka | Vaša Kosa Zaslužuje Najbolje',
   description: 'Salon Lepote Bucka nudi profesionalnu negu kose i kože. Posetite nas i otkrijte sve naše usluge!',
   robots: 'index, follow',
+  metadataBase: new URL('https://bucka.rs'), // <--- OVO JE KLJUČNO
   openGraph: {
     title: 'Salon Lepote Bucka',
     description: 'Salon Lepote Bucka nudi vrhunske usluge friziranja, šišanja i ulepšavanja u Novom Sadu.',
