@@ -127,7 +127,7 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* CSS za responsivnost, animaciju i blur efekte */}
+      {/* CSS za responsivnost i animaciju */}
       <style jsx>{`
         .gallery-wrapper {
           width: 100%;
@@ -175,29 +175,6 @@ useEffect(() => {
           max-width: 100%;
         }
 
-        /* Blur efekti - samo za prvi i poslednji red */
-        .first-row .gallery-item::before,
-        .last-row .gallery-item::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          height: 15%;
-          pointer-events: none;
-          backdrop-filter: blur(1.8px);
-          -webkit-backdrop-filter: blur(1.8px);
-        }
-
-        .first-row .gallery-item::before {
-          top: 0;
-          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-        }
-
-        .last-row .gallery-item::after {
-          bottom: 0;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
-        }
-
         /* Responsivnost za tablete (1280px do 481px) */
         @media (max-width: 1280px) and (min-width: 481px) {
           .gallery-wrapper {
@@ -242,11 +219,11 @@ useEffect(() => {
           }
           /* Specifično za srednji red */
           .middle-row .gallery-item {
-            flex-basis: calc(var(--item-basis) * 1.13) !important; /* Blago smanjenje na 1.12 umesto 1.15 */
+            flex-basis: calc(var(--item-basis) * 1.13) !important; /* Blago smanjenje */
           }
           .middle-row .gallery-item img {
-            width: calc(100% * 0.97); /* Smanjenje širine slika za oko 3% radi fino podešavanja */
-            height: auto; /* Očuvanje proporcija */
+            width: calc(100% * 0.97); /* Smanjenje širine */
+            height: auto;
           }
         }
       `}</style>
