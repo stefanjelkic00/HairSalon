@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bucka.rs
+
+# Sitemaps
+Sitemap: https://bucka.rs/sitemap.xml

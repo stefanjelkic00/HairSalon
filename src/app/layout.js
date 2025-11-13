@@ -29,6 +29,8 @@ export default function RootLayout({ children }) {
      <head>
        {/* Elfsight skripta */}
         <script src="https://static.elfsight.com/platform/platform.js" async />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
      </head>
      <body>
         {children}
