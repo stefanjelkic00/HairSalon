@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: 'Salon Lepote Bucka',
     description: 'Salon Lepote Bucka nudi vrhunske usluge friziranja, šišanja i ulepšavanja u Novom Sadu.',
-    images: ['/logo/logo192x192white.png'],
+    images: ['/logo/logo_headers.png'],
     url: 'https://bucka.com',
     type: 'website',
   },
