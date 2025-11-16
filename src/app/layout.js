@@ -5,8 +5,17 @@ import { Poppins, Great_Vibes } from 'next/font/google';
 import './styles/globals.css';
 
 export const metadata = {
-  title: 'Bucka - Vrhusnke Frizerske Usluge',
-  description: 'Transformišite svoj stil uz naše profesionalne frizerske i kozmetičke usluge u Salonu Ime.',
+  title: 'Bucka | Frizerski Salon',
+  description: 'Transformišite svoj stil uz naše profesionalne frizerske i kozmetičke usluge.',
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', type: 'image/x-icon' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 const poppins = Poppins({
