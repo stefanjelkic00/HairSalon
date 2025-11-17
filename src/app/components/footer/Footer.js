@@ -87,7 +87,7 @@ export default function Footer() {
           <div>
             <SectionTitle>Kontakt</SectionTitle>
             <ul className="space-y-2 mt-4 text-sm opacity-90">
-              <FooterLink href={CONTACT_INFO.phone}>+381 69 116 8623</FooterLink>
+              <FooterLink href={CONTACT_INFO.phone}>+381 21 466074</FooterLink>
               <FooterLink href={CONTACT_INFO.email}>dragana.bucka@gmail.com</FooterLink>
               <FooterLink href={CONTACT_INFO.address} target="_blank">
                 1300 kaplara 12, Novi Sad

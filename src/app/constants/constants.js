@@ -14,7 +14,7 @@ export const FOOTER_LINKS = {
 };
 
 export const CONTACT_INFO = {
-  phone: "tel:+381691168623",
+  phone: "tel:+38121466074",
   email: "mailto:dragana.bucka@gmail.com",
   address: "https://maps.google.com/?q=1300+kaplara+12,+Novi+Sad",
 };

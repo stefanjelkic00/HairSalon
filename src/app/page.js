@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/about/About';
 import Team from './components/Team';
@@ -8,31 +7,29 @@ import Pricing from './components/Pricing';
 import Reviews from './components/Reviews';
 import Contact from './components/contact/Contact';
 import Map from './components/Map';
-import Footer from './components/footer/Footer';
 import ScrollAnimator from './components/client/ScrollAnimator'; // Nova klijentska komponenta
 
 
 export const metadata = {
-  title: 'Salon Lepote Bucka | Vaša Kosa Zaslužuje Najbolje',
-  description: 'Salon Lepote Bucka nudi profesionalnu negu kose i kože. Posetite nas i otkrijte sve naše usluge!',
+  title: 'Frizerski Salon Bucka | Novi Sad',
+  description: 'Bucka, salon lepote u Novom Sadu sa iskustvom u šišanju, farbanju i nezi kose. Nalazimo se u 1300 kaplara 12. Kontakt: +381 21 466074.',
   robots: 'index, follow',
-  metadataBase: new URL('https://bucka.rs'), // <--- OVO JE KLJUČNO
   openGraph: {
-    title: 'Salon Lepote Bucka',
+    title: 'Salon Lepote Bucka | Novi Sad',
     description: 'Salon Lepote Bucka nudi vrhunske usluge friziranja, šišanja i ulepšavanja u Novom Sadu.',
     images: ['/logo/logo_headers.png'],
     url: 'https://bucka.rs',
     type: 'website',
+    locale: 'sr_RS',
   },
 };
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen bg-salon-white flex-col" lang="sr">
+    <>
       <ScrollAnimator />
-      <Navbar />
-      <div className="flex-1 md:ml-16">
+      <div className="md:ml-16">
         <Hero />
         <About />
         <Team />
@@ -42,8 +39,7 @@ export default function Home() {
         <Reviews />
         <Contact />
         <Map />
-        <Footer />
       </div>
-    </main>
+    </>
   );
 }

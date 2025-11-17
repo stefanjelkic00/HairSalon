@@ -20,8 +20,8 @@ export default function ContactClient() {
     {
       icon: <FaPhone className="text-salon-purpledark w-6 h-6" />,
       label: 'Telefon',
-      value: '+381 69 116 8623',
-      href: 'tel:+381691168623',
+      value: '+381 21 466074',
+      href: 'tel:+38121466074',
     },
     {
       icon: <FaEnvelope className="text-salon-purpledark w-6 h-6" />,
