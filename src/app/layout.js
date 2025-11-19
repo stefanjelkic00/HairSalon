@@ -5,19 +5,41 @@ import { Poppins, Great_Vibes } from 'next/font/google';
 import Script from 'next/script'; // <--- OVDE!
 import './styles/globals.css';
 
+
 export const metadata = {
-  title: 'Bucka | Frizerski Salon Novi Sad',
-  description: 'Frizerski salon Bucka u Novom Sadu nudi šišanje, farbanje i negu kose. Posetite nas u 1300 kaplara 12 ili pozovite +381 21 466074.',
-  icons: {
+  metadataBase: new URL('https://www.bucka.rs'),
+
+  alternates: {
+    canonical: '/',   // ← dodaj ovo (ako već nemaš)
+  },
+  
+  title: {
+    default: 'Bucka | Frizerski Salon Novi Sad',
+    template: '%s | Bucka'
+  },
+
+  description: 'Frizerski salon Bucka | Novi Sad – šišanje, farbanje i nega kose. 1300 kaplara 12 • +381 21 466074',
+
+  openGraph: {
+    siteName: 'Frizerski salon Bucka',           // ← OVO JE KLJUČ ZA DRUGI RED
+    title: 'Bucka | Frizerski Salon Novi Sad',
+    description: 'Profesionalne frizerske usluge u Novom Sadu.',
+    url: 'https://bucka.rs',
+    images: [{ url: '/logo/logo_headers.png', width: 1200, height: 630, alt: 'Bucka salon' }],
+    locale: 'sr_RS',
+    type: 'website',
+  },
+
+  robots: { index: true, follow: true },
+    icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon.ico', type: 'image/x-icon' },
     ],
-    apple: '/apple-touch-icon.png',
+        apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
-  metadataBase: new URL('https://bucka.rs')
 };
 
 const poppins = Poppins({
